@@ -10,9 +10,9 @@ def getColumnsFromSchema(SchemaRout) :
     return columnsInSchema
 
 def getVariables():
-    f = open("C:/Users/Enzo/Desktop/defaultFromSchema/env.json")
+    user = input("Ingrese el código del usuario : ")
+    f = open(f"/var/sds/homes/{user}/workspace/env.json")
     data = json.load(f)
-    user = data["user"]
     table = data["table"]
     partitionsString = data["partitions"]
     schema = data["schema"]
@@ -20,17 +20,17 @@ def getVariables():
     registersAmount = int(data["registersAmount"])
     f.close()
     partitions = partitionsString.split(";")
-    tableRout = f"C:/Users/Enzo/Desktop/defaultFromSchema/{user}/{table}_dummy/"
-    schemaRout = f"C:/Users/Enzo/Desktop/defaultFromSchema/{schema}"
+    tableRout = f"/var/sds/homes/{user}/workspace/{table}"
+    schemaRout = f"/var/sds/homes/{user}/workspace/{schema}"
     columns = columnsString.split(";")
-    return tableRout,schemaRout,columns,registersAmount,partitions
+    return tableRout, schemaRout, columns, registersAmount, partitions, user
 
 def getDefaultColumns(columns,columnsFromSchema):
     defaultColumns = list(set(columnsFromSchema)-set(columns))
     return defaultColumns
 
-def getValuesForColumns(columns):
-    f = open("C:/Users/Enzo/Desktop/defaultFromSchema/env.json")
+def getValuesForColumns(columns, user):
+    f = open(f"/var/sds/homes/{user}/workspace/env.json")
     data = json.load(f)
     dataFrameDictionary = {
     }
