@@ -52,3 +52,4 @@ def getValuesForNullColumns(columns,registersAmount):
 def mergeColumns(columnsWithNotNullValues,columnsWithNullValues):
     columnsWithNotNullValues.update(columnsWithNullValues)
     return columnsWithNotNullValues 
+    
