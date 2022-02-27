@@ -1,0 +1,189 @@
+{
+  "namespace": "krei",
+  "name": "t_krei_regulatory_information",
+  "doc": "This table contains all the fields concerning Financial Regulatory or Reporting information. It is included all Regulatory information of a contract which origin is Local.",
+  "database": "master",
+  "storageZone": "Masterdata",
+  "storageType": "HDFS-Parquet",
+  "physicalPath": "/data/master/krei/data/t_krei_regulatory_information",
+  "partitions": ["g_entific_id", "gf_cutoff_date"],
+  "securityLevel": "L1",
+  "objectVersion": "4.0.0",
+  "type": "record",
+  "fields": [{
+    "name": "gf_cutoff_date",
+    "type": "date",
+    "logicalFormat": "DATE",
+    "deleted": false,
+    "metadata": true,
+    "default": "",
+    "format": "yyyy-MM-dd",
+    "locale": "pe"
+  }, {
+    "name": "gf_local_contract_number_id",
+    "type": "string",
+    "logicalFormat": "ALPHANUMERIC(80)",
+    "deleted": false,
+    "metadata": false,
+    "default": ""
+  }, {
+    "name": "g_management_breakdown_type",
+    "type": "string",
+    "logicalFormat": "ALPHANUMERIC(4)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "g_contract_id",
+    "type": ["string", "null"],
+    "logicalFormat": "ALPHANUMERIC(50)",
+    "deleted": false,
+    "metadata": false,
+    "default": ""
+  }, {
+    "name": "gf_information_origin_id",
+    "type": "string",
+    "logicalFormat": "ALPHANUMERIC(4)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "g_lcr_liquidity_category_type",
+    "type": ["string", "null"],
+    "logicalFormat": "ALPHANUMERIC(2)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "g_local_currency_id",
+    "type": ["string", "null"],
+    "logicalFormat": "ALPHANUMERIC(3)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "gf_unencumbered_lc_amount",
+    "type": ["null", "decimal(20,2)"],
+    "logicalFormat": "DECIMAL(20,2)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_encumbered_lc_amount",
+    "type": ["null", "decimal(20,2)"],
+    "logicalFormat": "DECIMAL(20,2)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rk_ead_ptl_lc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": false,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rwa_crr_ptl_lc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": false,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rk_crr_ptl_lc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rk_crr_12m_lc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rk_crr_annl_lc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rk_ead_ptl_oc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rwa_crr_ptl_oc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "gf_rk_crr_ptl_oc_amount",
+    "type": ["null", "decimal(26,6)"],
+    "logicalFormat": "DECIMAL(26,6)",
+    "deleted": false,
+    "metadata": true,
+    "default": null,
+    "locale": "pe"
+  }, {
+    "name": "g_sppi_type",
+    "type": ["string", "null"],
+    "logicalFormat": "ALPHANUMERIC(1)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "g_business_model_type",
+    "type": ["string", "null"],
+    "logicalFormat": "ALPHANUMERIC(1)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "g_poci_type",
+    "type": ["string", "null"],
+    "logicalFormat": "ALPHANUMERIC(1)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "gf_source_encumbrance_type",
+    "type": ["string", "null"],
+    "logicalFormat": "ALPHANUMERIC(2)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "g_entific_id",
+    "type": "string",
+    "logicalFormat": "ALPHANUMERIC(2)",
+    "deleted": false,
+    "metadata": true,
+    "default": ""
+  }, {
+    "name": "gf_audit_date",
+    "type": ["timestamp", "null"],
+    "logicalFormat": "TIMESTAMP",
+    "deleted": false,
+    "metadata": true,
+    "default": "",
+    "format": "yyyy-MM-dd HH:mm:ss.SSSSSS",
+    "locale": "pe"
+  }]
+}
